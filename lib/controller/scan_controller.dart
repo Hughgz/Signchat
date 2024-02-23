@@ -71,10 +71,10 @@ class ScanController extends GetxController{
     rotation: 90,
     threshold: 0.4,
     );
-      if (detector != null) {
+    if (detector != null) {
         var ourDetectedObject = detector.first;
         if(ourDetectedObject['confidenceInClass'] * 100 > 45){
-          label = detector.first['label'].toString();
+          label = detector.first['detectedClass'].toString();
           h = ourDetectedObject['rect']['h'];
           w = ourDetectedObject['rect']['w'];
           x = ourDetectedObject['rect']['x'];
